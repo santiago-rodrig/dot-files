@@ -1,0 +1,46 @@
+syntax off
+filetype plugin indent on
+call plug#begin("~/.vim/plugged")
+  " Plugin Section
+  Plug 'morhetz/gruvbox'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-eunuch'
+  Plug 'tpope/vim-surround'
+  Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-entire'
+  Plug 'christoomey/vim-system-copy'
+  Plug 'preservim/tagbar'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'mattn/emmet-vim'
+  Plug 'vim-ruby/vim-ruby'
+call plug#end()
+"Config Section
+" Basic
+syntax on
+set nowrap
+set tabstop=4
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+set foldmethod=indent
+set number
+set cursorline
+set colorcolumn=81
+let mapleader=','
+set foldlevel=7
+syntax enable
+" Color Scheme
+if (has("termguicolors"))
+ set termguicolors
+endif
+colorscheme gruvbox
+set background=dark
+" TagBar
+nmap <leader>t :TagbarToggle<CR>
+" Vim Fugitive
+nmap <leader>g :Gstatus<CR>
+" Add prawn syntax highlighting
+au BufNewFile,BufRead *.prawn set filetype=ruby
+" Search selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
