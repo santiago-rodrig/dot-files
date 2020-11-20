@@ -1,0 +1,20 @@
+filetype plugin indent on
+syntax enable
+set nowrap
+set tabstop=4
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+set foldmethod=indent
+set number
+set cursorline
+set colorcolumn=81
+let mapleader=','
+set foldlevel=7
+
+" Color scheme
+colorscheme elflord
+set background=dark
+
+" Search selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
