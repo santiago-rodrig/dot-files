@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/srodrig/.oh-my-zsh"
+export ZSH="/home/srodrig/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -98,23 +98,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval "$(rbenv init -)"
-
-alias start_pg="pg_ctl -D /usr/local/var/postgres start"
-alias stop_pg="pg_ctl -D /usr/local/var/postgres stop"
-alias tree_l1="tree -L 1 -Ca --dirsfirst -I .git"
-alias tree="tree -Ca --dirsfirst -I .git"
-alias source_cbpi="source $HOME/.cbpi_env_vars.sh"
-alias nvim_config="nvim $HOME/.config/nvim/init.vim"
-
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$HOME/bin:$GOPATH/bin"
-export EDITOR='vim'
-export TERM='xterm-256color'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-function findreplace {
-    ag -l $1 | xargs sed -i '' -e "s/$1/$2/g"
-}
+export EDITOR=vim
+export PATH="$PATH:$HOME/.local/bin"

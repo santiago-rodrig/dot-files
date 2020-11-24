@@ -24,21 +24,28 @@ vim +PlugInstall
 
 ### Minimal
 
-Use the file `vimrcMinimal` and copy it at you `$HOME` with the name of
+Use the file `vimrcMinimal` and copy it at your `$HOME` with the name of
 `.vimrc`.
 
 ## ZSH
 
-### With plugins
-
 Use [ohmyzsh](https://ohmyz.sh/).
 
-Copy the file `zshFull` to `$HOME/.zshrc`.
+Copy the file `zshFull` to `~/.zshrc`.
 
 ## TMUX
 
-### With plugins
+Copy the file `tmuxFull` to `~/.tmux.conf`.
 
-Install [ohmytmux](https://github.com/gpakosz/.tmux).
+Run this in your terminal, it will install some extensions for URxvt.
 
-Copy the file `tmuxFull` to `$HOME/.tmux.conf.local`
+```zsh
+git clone https://github.com/muennich/urxvt-perls && \
+cd urxvt-perls && \
+mkdir -p ~/.urxvt/ext && \
+cp keyboard-select deprecated/url-select deprecated/clipboard ~/.urxvt/ext && \
+cd .. && rm -rf urxvt-perls
+```
+
+Now, copy `Xresources` to your home directory as `.Xresources`, then run
+`xrdb ~/.Xresources`, close your terminal and open it again.
