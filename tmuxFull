@@ -1,7 +1,8 @@
+if-shell "test -f ~/.tmuxline.conf" "source ~/.tmuxline.conf"
 # wait two seconds waiting for input
 set -g repeat-time 2000
 # default terminal
-set -g default-terminal "rxvt-unicode-256color"
+set -g default-terminal "xterm-256color"
 # reduce slowdown
 set -sg escape-time 1
 # window numbering starts at 1
@@ -23,19 +24,19 @@ bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 bind c new-window -c "#{pane_current_path}"
 # status bar
-set-option -g status on
-set -g status-interval 5
-set -g status-justify centre
+# set-option -g status on
+# set -g status-interval 5
+# set -g status-justify centre
 # visual notifications of activity in other windows
-setw -g monitor-activity on
-set -g visual-activity on
+# setw -g monitor-activity on
+# set -g visual-activity on
 # set color for status bar
-set-option -g status-bg colour235 #base02
-set-option -g status-fg yellow
-set-option -g status-attr dim
+# set-option -g status-bg colour235 #base02
+# set-option -g status-fg yellow
+# set-option -g status-attr dim
 # set window list colors - red for active and cyan for inactive
-set-window-option -g window-status-fg brightblue
-set-window-option -g window-status-bg colour236
+# set-window-option -g window-status-fg brightblue
+# set-window-option -g window-status-bg colour236
 # show hostname and IP address on left side of status bar
 # set -g status-left-length 85
 # set -g status-left "#[fg=colour198]: #h : #[fg=brightblue]#(curl icanhazip.com) #(ifconfig en0 | grep 'inet' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
@@ -44,6 +45,6 @@ set-window-option -g window-status-bg colour236
 # set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]: %d %b %Y #[fg=green]: %l:%M %p : #(date -u | awk '{print $4}') :"
 # set -g status-right "#[fg=blue]#(tmux-cpu --no-color)"
 # divider color
-set -g pane-border-fg default
-set -g pane-active-border-bg blue
-set -g pane-active-border-bg default
+# set -g pane-border-fg default
+# set -g pane-active-border-bg blue
+# set -g pane-active-border-bg default

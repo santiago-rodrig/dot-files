@@ -1,7 +1,8 @@
 syntax off
 filetype plugin indent on
+" Plugin Section
 call plug#begin("~/.vim/plugged")
-    " Plugin Section
+    Plug 'tpope/vim-fugitive'
     Plug 'morhetz/gruvbox'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-eunuch'
@@ -16,26 +17,28 @@ call plug#begin("~/.vim/plugged")
     Plug 'vim-ruby/vim-ruby'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'fatih/vim-go'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'edkolev/tmuxline.vim'
 call plug#end()
 "Config Section
 " Basic
-syntax on
+syntax enable
 set nowrap
 set tabstop=4
 set softtabstop=4
 set expandtab
 set shiftwidth=4
-set foldmethod=indent
+set foldmethod=syntax
 set relativenumber
 set cursorline
 set colorcolumn=81
 let mapleader=','
 set foldlevel=7
-syntax enable
+set wildmenu
 " Color Scheme
-if (has("termguicolors"))
-    set termguicolors
-endif
+set notermguicolors
 colorscheme gruvbox
 set background=dark
 " TagBar
@@ -49,3 +52,11 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " FZF
 nmap <leader>f :Files<CR>
 nmap <leader>gf :GFiles<CR>
+" netwr mappings
+nmap <leader>e :Explore<CR>
+nmap <leader>te :Texplore<CR>
+nmap <leader>se :Sexplore<CR>
+nmap <leader>ve :Vexplore<CR>
+" vim airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
