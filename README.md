@@ -37,6 +37,10 @@ Copy the file `zshFull` to `~/.zshrc`.
 
 Copy the file `tmuxFull` to `~/.tmux.conf`.
 
+Now copy `tmuxlineFull` to `~/.tmuxline.conf`
+
+## URxvt
+
 Run this in your terminal, it will install some extensions for URxvt.
 
 ```zsh
